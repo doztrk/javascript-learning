@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Var-Let-Const</title>
+  </head>
+  <body>
+    <h2>Var-Let-Const</h2>
+
+    <script>
+      var x;
+      console.log(x);
+
+      //Var can be redeclared
+      var x = 5;
+      var x = 7;
+      console.log(x); // 7
+
+      var y = 10;
+      y = 15;
+      console.log(y); // 15
+
+      let z = 15;
+      /*let z = 25; Let cannot be redeclared*/
+      z = 25; // It can only be reassigned
+      console.log(z); // 25
+
+      
+      //const a; Must be declared
+      const a = 3;
+      //a = 4; Gives reassignment error in runtime,const is immutable
+      console.log(a);
+
+      {
+        var m = 50;
+        var n = 70;
+        const t = 100;
+        console.log(n); // 70
+      }
+      console.log(m); // 50
+      console.log(n); // Gives error because it is outside of block.
+      console.log(t); // Gives not defined error because it is outside of block.
+    </script>
+  </body>
+</html>
