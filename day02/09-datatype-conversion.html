@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Type Conversion</title>
+</head>
+<body>
+
+    <h2>Data Type Conversion</h2>
+
+    <script>
+
+        var para = 500;
+        para = String(para); // Converting number to string
+        console.log(typeof para);
+
+        let payment = 1500;
+        payment = payment.toString();
+        console.log(typeof payment);
+
+        const money = "100";
+        console.log(typeof money); // string
+
+        console.log(money + 15); // 1015
+        console.log(Number(money) + 15); //115
+
+        console.log(Number("abc") + 15); //NaN
+
+        var x = 150n;
+        var y = 5;
+        console.log(x+BigInt(y)); // 155
+
+        // Boolean
+
+        let puan; 
+        console.log(puan); // undefined
+        console.log(Boolean(puan)); // false
+
+        let salary = 12300;
+        console.log(Boolean(salary)); // true
+        console.log(Boolean("")); // false
+        console.log(Boolean(" ")); // true
+        console.log(Boolean(3-3)); // false
+        console.log(Boolean(Number("elma"))); // Number("elma") gives Not A Number, so it gives false.
+        console.log(Boolean(null)); // false
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

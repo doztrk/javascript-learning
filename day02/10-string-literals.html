@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Literals</title>
+</head>
+<body>
+
+    <h2>String Literals</h2>
+
+    <script>
+
+        //Using "" or '' inside a string
+
+        let sentence_double_quote = "Ayse is living in 'Istanbul'";
+        console.log(sentence_double_quote); //Ayse is living in Istanbul
+
+        let sentence_single_quote = 'Ayse is learning "JavaScript" in Istanbul';
+        console.log(sentence_single_quote); //Ayse is living in Istanbul
+
+        let _sentence = "Ayse is learning \"JavaScript\" in 'Istanbul'";
+        console.log(_sentence); //Ayse is learning "JavaScript" in Istanbul
+
+        // Backtick ` ` usage ( Option + , in Mac Turkish)
+
+        var firstName = "Ayse";
+        var lastName = "Yilmaz";
+        var $salary = 25000;
+
+        /* Double Quote version */
+        console.log("My name is " + firstName + " " + lastName + " and my salary is " + $salary); // My name is Ayse Yilmaz and my salary is 25000
+
+        /* BackTick version */
+        console.log(`My name is ${firstName} ${lastName} and my salary is ${$salary}`); // My name is Ayse Yilmaz and my salary is 25000
+
+        
+
+        
+
+    </script>
+    
+</body>
+</html>

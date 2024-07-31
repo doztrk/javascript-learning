@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types</title>
+</head>
+<body>
+
+    <h2>Data Types</h2>
+
+    <script>
+
+        var x = 25;
+        console.log(typeof x); //Shows the type of the variable
+        var word = "Hello";
+        console.log(typeof word); //Shows the type of the variable
+
+        var bool = false;
+        console.log(typeof bool); //Shows the type of the variable
+
+        var max = Number.MAX_SAFE_INTEGER;
+        console.log(max); // 9007199254740991
+        
+        var k = 65n; 
+        console.log(k + 1n); //66n
+        console.log(typeof k); //bigint
+
+        /* !!! var l = 65;
+        console.log(l + 1n); // BigInt and normal number cannot be added */
+
+        let u; //Untinitialized
+        console.log(typeof u); //Undefined
+        u = null;
+        console.log(typeof u); //Object
+
+        // JavaScript is dynamic in the data type identification
+        let n = 7; // n is a number
+        n = "Hello"; // n is now a string
+        console.log(typeof n); //number
+
+        let newVar = "This is a sentence"; // newVar is a string
+        newVar = false; // newVar is now a boolean
+        console.log(typeof newVar); //string
+
+
+</script>
+    
+</body>
+</html>
