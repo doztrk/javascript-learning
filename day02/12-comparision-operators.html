@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparision Operators</title>
+  </head>
+  <body>
+    <h2>Comparision Operators</h2>
+
+    <script>
+      let x = 50;
+      let y = 70;
+      let z = 100;
+
+      console.log(x == 50); // true
+      console.log(x == y); // false
+      console.log(x == "50"); //true because == only looks for value
+      console.log(x === "50"); //false because === looks for value and type
+      console.log(x === 50); //true
+      console.log(x == 50n); // true
+      console.log(x===50n); // false because type is different
+
+      console.log(x != 50); //false
+      console.log(x != "50") //false
+      console.log(x !== "50"); //true
+      console.log(x !== 50); //false
+
+      console.log(x<y); //true
+      console.log(x<=z); //true
+      console.log(x<"75"); //true
+      console.log(x < "elma") //false because elma is NaN and it is false by default
+      
+    </script>
+  </body>
+</html>

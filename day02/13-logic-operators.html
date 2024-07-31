@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Operators</title>
+</head>
+<body>
+
+    <h2>Logic Operators</h2>
+
+    <script>
+
+        let s1 = "Bird";
+        let s2 = "Cat";
+
+        console.log(s1 && s2); // Cat
+        console.log(s1 || s2); // Bird
+
+        console.log("" || "abc" || NaN); //Gives abc because abc is the first true
+        console.log(-5 && "elma" && 0 && undefined); //Gives 0 because it is the first false
+
+
+    </script>
+    
+</body>
+</html>
