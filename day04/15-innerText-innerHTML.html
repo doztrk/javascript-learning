@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerText - innerHTML</title>
+</head>
+<body>
+
+    <h2>innerText - innerHTML</h2>
+
+    <h3>Ayşe Çelik</h3>
+    <p></p>
+
+    <script>
+
+        var name = document.querySelector("h3").innerText;
+        console.log(name); //Ayşe Çelik
+
+
+        console.log(document.querySelector("p").innerHTML); //Shows space
+
+        document.querySelector("p").innerHTML = `Merhaba ${name}`;
+
+        console.log(document.querySelector("p").innerHTML); //Shows Merhaba Ayşe Çelik
+
+         
+    </script>
+
+
+    
+</body>
+</html>

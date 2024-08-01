@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class List</title>
+    <style>
+        .blue{
+            background-color: blue;
+        }
+        .pink{
+            background-color: pink;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="name blue">Hello World!</h1>
+
+    <script>
+        var styles = document.querySelector(".name").classList;
+        console.log(styles);
+
+        styles.add("pink"); //add pink class, background is pink
+        console.log(styles);
+
+        styles.add("yellow"); //add yellow class, background is yellow
+        console.log(styles);
+
+        styles.remove("yellow") //remove yellow class, background is pink
+        console.log(styles);
+
+        styles.remove("pink") //remove pink class, background is blue
+        console.log(styles);
+
+/*         document.querySelector(".name").style.backgroundColor = "red";
+ */    
+
+ 
+    </script>
+</body>
+</html>

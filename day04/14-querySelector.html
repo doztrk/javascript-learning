@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <h2>DOM</h2>
+
+    <nav>
+      <ul>
+        <li id="box1" class="box">Main Page</li>
+        <li class="box">About</li>
+        <li class="box">Contact</li>
+      </ul>
+
+      <script>
+        let nav = document.querySelector("nav");
+        console.log(nav);
+
+        let box1 = document.querySelector("#box1");
+        console.log(box1);
+
+        box1.innerText = "Home";
+        box1.innerHTML = "<b style = 'color:red'>Home</b>";
+        
+        
+
+        let boxes = document.querySelectorAll(".box");
+        console.log(boxes);
+
+        boxes[1].innerHTML = "Hakkında";
+
+
+      </script>
+    </nav>
+  </body>
+</html>
