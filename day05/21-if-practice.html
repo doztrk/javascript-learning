@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>If Practice</title>
+  </head>
+  <body>
+    <h2>If Practice</h2>
+
+    <script>
+      var x = 5;
+
+      x = null; // false
+      x = undefined; //false
+      x = NaN; // false
+      x = true; // true
+      x = 0; // false
+      x = -9; //true
+      x = ""; // false
+      x = " "; //true
+      x = {}; //true
+      x = []; //true
+      x = {name: "Ayşe"}; // true
+      x = [1, 2, 3]; // true
+
+      //If x's boolean value is false, it does not run the if statement
+      if (x) {
+        console.log("Merhaba " + x);
+      }
+      
+    </script>
+  </body>
+</html>

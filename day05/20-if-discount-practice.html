@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discount Application</title>
+  </head>
+  <body>
+    <h2>If Practice</h2>
+
+    <input type="text" id="price" />
+    <input type="button" value="calculate" onclick="calculate()" />
+    <div class="result"></div>
+    <script>
+      // A program that takes a price input from a TextBox.
+      // If the price is greater than 500, it applies a 10% discount and displays the result.
+      // If not, it applies a 5% discount and displays the result.
+
+      ,
+
+      function calculate() {
+        let price = document.querySelector("#price").value;
+
+        if (price > 500) {
+          price *= 0.9;
+        } else {
+          price *= 0.95;
+        }
+        document.querySelector(
+          ".result"
+        ).innerHTML = `"Result: <b>${price}</b>"`;
+      }
+    </script>
+  </body>
+</html>

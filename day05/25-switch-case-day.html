@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch Case</title>
+  </head>
+  <body>
+    <h2>Day App</h2>
+
+    <input type="number" id="day" />
+    <button onclick="showDay()">Show</button>
+    <p></p>
+
+    <script>
+      function showDay() {
+        let day = document.querySelector("#day").value;
+
+        switch (day) {
+          case "1":
+            message = "Monday";
+            break;
+          case "2":
+            message = "Tuesday";
+            break;
+          case "3":
+            message = "Wednesday";
+            break;
+          case "4":
+            message = "Thursday";
+            break;
+          case "5":
+            message = "Friday";
+            break;
+          case "6":
+            message = "Saturday";
+            break;
+          case "7":
+            message = "Sunday";
+            break;
+          default:
+            message = "!! Invalid Day Number --> " + day;
+            break;
+        }
+        document.querySelector("p").innerHTML = message;
+        document.querySelector("#day").value = "";
+      }
+    </script>
+  </body>
+</html>

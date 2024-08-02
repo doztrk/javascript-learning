@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discount Application</title>
+  </head>
+  <body>
+    <h2>Discount Application</h2>
+    <input type="text" id="price" />
+    <input type="button"  value="calculate" onclick="calculate()">
+    <div class="result"></div>
+
+    <script>
+
+
+        /* Bir Textbox tan alinan fiyat bilgisi 500 den büyükse %10 indirim uygulayip sonucu yazan, 300 den büyükse %7 indirip uygulayap sonucu
+      yazan, degilse %5 indirip uygulayap sonucu yazan programi yapaniz.*/
+
+      function calculate() {
+        let price = document.querySelector("#price").value;
+
+        if(price > 500){
+            price *= 0.9;
+        }else if(price > 300){
+            price *= 0.93;
+        }else{
+            price *= 0.95;
+        }
+        document.querySelector(".result").innerHTML = `Result: <b>${price}</b>`;
+      }
+    </script>
+  </body>
+</html>

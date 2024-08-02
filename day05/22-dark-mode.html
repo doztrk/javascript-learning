@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Light Mode</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      #btn {
+        background-color: black;
+        color: white;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        border-radius: 50%;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        cursor: pointer;
+        border: none;
+      }
+      #btn:hover {
+        background-color: #003366;
+      }
+      .dark {
+        background-color: black;
+        color: white;
+      }
+      .dark #btn {
+        background-color: yellow;
+        color: black;
+      }
+      .dark #btn:hover {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Dark Light Mode</h2>
+
+    <button id="btn" onclick="changeMode()">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+      explicabo voluptates dolorum eligendi in laboriosam, praesentium officiis
+      dolorem, numquam culpa eveniet incidunt eaque, sit doloremque. Perferendis
+      reprehenderit est ex veniam?
+    </p>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+      explicabo voluptates dolorum eligendi in laboriosam, praesentium officiis
+      dolorem, numquam culpa eveniet incidunt eaque, sit doloremque. Perferendis
+      reprehenderit est ex veniam?
+    </p>
+
+    <script>
+      function changeMode() {
+        //Best-Practice↴
+        //document.body.classList.toggle("dark"); easy-way
+
+        //Another way↴
+        let mode = document.querySelector("body").classList.contains("dark");
+        if (mode) {
+          document.querySelector("body").classList.remove("dark");
+          document.querySelector("#btn").innerHTML =
+            '<i class="fa-solid fa-moon"></i>';
+        } else {
+          document.querySelector("body").classList.add("dark");
+          document.querySelector("#btn").innerHTML =
+            '<i class="fa-solid fa-sun"></i>';
+        }
+      }
+    </script>
+  </body>
+</html>
