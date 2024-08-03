@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ternary</title>
+  </head>
+  <body>
+    <h2>Ternary</h2>
+
+    <input type="number" id="salary" />
+    <button onclick="calculate()">Calculate</button>
+    <div id="result"></div>
+    <script>
+
+        // A ternary expression that takes a salary input from a TextBox and evaluates it
+      function calculate() {
+        let salary = document.querySelector("#salary").value;
+        let result =
+          salary > 20000 ? (salary > 30000 ? "Very High" : "Normal") : "Low";
+        document.querySelector("#result").innerHTML = "Salary is " + result;
+      }
+    </script>
+  </body>
+</html>

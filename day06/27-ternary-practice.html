@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ternary Practice</title>
+  </head>
+  <body>
+    <h2>Ternary Practice</h2>
+
+    <input type="radio" name="job" id="retired" onclick="calculate('r')" />
+    <label for="retired">Emekli</label>
+    <br />
+
+    <input type="radio" name="job" id="working" onclick="calculate('w')" />
+    <label for="working">Working</label>
+
+    <div class="result"></div>
+
+    <script>
+      /* When an employee is selected, display the full salary. If the employee is retired, apply a 10% deduction to the salary and display it. Do this using a ternary operator.*/
+      function calculate(workType) {
+        let salary = 40000;
+
+        //salary = event.target.id == "retired" ? salary*0.9 : salary; With this, we dont require parameters
+
+        salary = workType == "r" ? salary * 0.9 : salary;
+
+        document.querySelector(".result").innerHTML = `Salary: <b>${salary}</b>`;
+
+      }
+    </script>
+  </body>
+</html>

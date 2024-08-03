@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nullish Coalescing</title>
+  </head>
+  <body>
+    <h2>Nullish Coalescing</h2>
+
+    <script>
+      let user = null;
+      user = {
+        name: "Ayşe",
+      };
+
+      // alert(user == null || user == undefined ? "User is null" : "User is defined");
+      
+      alert(user ?? "Undefined User");
+
+      //It checks the variable's null or undefined value.
+      //If it is null or undefined, it returns the statement after the question mark.
+      //If it is not null or undefined, it returns the variable's values.
+
+    </script>
+  </body>
+</html>

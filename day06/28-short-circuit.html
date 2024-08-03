@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Short Circuit</title>
+  </head>
+  <body>
+    <h2>Short Circuit</h2>
+
+    <input type="number" placeholder="Enter a number from 0 to 100" />
+    <button onclick="showNumber()">Show</button>
+    <p></p>
+
+    <script>
+      function showNumber() {
+        let num = document.querySelector("input").value;
+        /* if (num < 0 || num > 100) {
+          alert("Please enter a number from 0 to 100");
+          document.querySelector("p").innerHTML = "";
+        } else {
+          document.querySelector("p").innerHTML = num;
+        }
+      } */
+
+        (num < 0 || num > 100) && alert("Please enter a number from 0 to 100"); // if block
+        (num < 0 || num > 100) || (document.querySelector("p").innerHTML = num); // else block
+      }
+    </script>
+  </body>
+</html>

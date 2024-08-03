@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nullish Coalescing Practice</title>
+  </head>
+  <body>
+    <h2>Nullish Coalescing Practice</h2>
+
+    <div></div>
+
+    <script>
+      /* Find the area of a rectangle by passing the side lengths to a function,
+    using nullish coalescing to check and assign default values.*/
+
+      function calculateArea(a, b) {
+        //Ternary Way
+        // let area = (a == null || a == undefined ? 0 : a) * (b == null || b == undefined ? 0 : b);
+
+        //Nullish Coalescing Way
+        let area = (a ?? 0) * (b ?? 0);
+
+        document.querySelector("div").innerHTML = `Area: <b>${area}</b>`;
+      }
+      calculateArea(3, 5);
+      
+    </script>
+  </body>
+</html>
