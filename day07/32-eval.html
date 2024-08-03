@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eval</title>
+  </head>
+  <body>
+    <h2>Eval</h2>
+    <input type="text" name="" id="num" placeholder="Enter a number" />
+    <button onclick="calculate()">Calculate</button>
+    <div class="result"></div>
+
+    <script>
+      //alert(eval(Math.sqrt(3-5*7+8/2)).toFixed(2));
+
+      function calculate() {
+        let num = document.querySelector("#num").value;
+        let result = eval(num);
+        document.querySelector(".result").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>

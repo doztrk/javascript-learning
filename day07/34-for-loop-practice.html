@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Loop Practice</title>
+  </head>
+  <body>
+    <h2>For Loop Practice</h2>
+    <input type="number" id="discount" placeholder="Enter discount amount" />
+    <button onclick="makeDiscount()">Make Discount</button>
+    <ul id="productList">
+      <li>Notebook <span>1500</span>$</li>
+      <li>Tablet <span>500</span>$</li>
+      <li>Phone <span>1200</span>$</li>
+      <li>Laptop <span>2000</span>$</li>
+      <li>Keyboard <span>100</span>$</li>
+      <li>Mouse <span>20</span>$</li>
+      <li>SSD <span>100</span>$</li>
+    </ul>
+
+    <script>
+      /* Bir ul listesinde ürün isimleri ve fiyat bilgileri bulunmaktadar.
+    Textbox a girilen indirim orani kadar listeye indirim uygulayan programi yazaniz.*/
+
+      //1-  Indirim oranını alacağız
+      //2-  Fiyatları alacağız
+      //3-  Fiyatlara indirim oranını uygulayacağız
+      //4-  Sayfaya yeni fiyatları gireceğiz.
+
+      function makeDiscount() {
+        let discount = document.querySelector("#discount").value;
+        let priceList = document.querySelectorAll("#productList li span");
+        console.log(priceList);
+        for (let i = 0; i < priceList.length; i++) {
+            let price = priceList[i].innerHTML;
+            console.log(price);
+            
+            let newPrice = price - (price * discount) / 100;
+
+            priceList[i].innerHTML = newPrice
+        }
+      }
+    </script>
+  </body>
+</html>
