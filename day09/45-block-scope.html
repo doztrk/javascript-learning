@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Scope</title>
+</head>
+<body>
+
+    <h2>Block Scope</h2>
+
+    <script>
+
+        function myFunction(){
+            var x = "Hello";
+            let y = "World";
+            const z = "Merhaba";
+
+            if(true){
+                var a = "İstanbul"; //var is a function scope, it can go outside of block
+                let b = "Ankara"; // let and const is block scope, it can't go outside of block
+                const c = "Izmir"; // let and const is block scope, it can't go outside of block
+                console.log(a,b,c); // IstanbuI Ankara İzmir
+            }
+            console.log(x,y,z); // Hello World Merhaba
+            console.log(a); //İstanbul
+            console.log(b); //Gives error because let is block scope limited
+            console.log(c); //Gives error because const is block scope limited
+
+        }
+
+
+        myFunction();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is Palindrome</title>
+</head>
+<body>
+
+    <h2>Is Palindrome</h2>
+
+    <input type="number" name="" id="num">
+    <button onclick="isPalindrome()">Is Palindrome</button>
+
+    <script>
+
+        let num = document.querySelector("#num").value;
+        num = num.toString(); // Ensure the input is treated as a string
+
+
+        function isPalindrome() {
+            for (let i = 0; i < num.length / 2; i++) {
+                if (num[i] !== num[num.length - 1 - i]) {
+                    alert("Not a Palindrome");
+                    return;
+                }
+            }
+            alert("Palindrome");
+        }
+    </script>
+    
+</body>
+</html>

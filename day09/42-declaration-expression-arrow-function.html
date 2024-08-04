@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Declaration - Expression - Arrow Function</title>
+  </head>
+  <body>
+    <h2>Declaration - Expression - Arrow Function</h2>
+
+    <script>
+      declarationFunction(); //Function declaration can be called above the line it has been created.
+      //It is called hoisting.
+
+      function declarationFunction() {
+        console.log(
+          "This function has been created with declaration function type"
+        );
+      }
+
+      declarationFunction();
+
+      ////////////////// - Expression Function - ///////////////////////
+      // expressionFunction(); Function expression cannot be called above the line it has been created.
+      //No hoisting
+      var expressionFunction = function () {
+        console.log(
+          "This function has been created with expression function type"
+        );
+      };
+      expressionFunction();
+
+      ///////////////// - Arrow Function - ///////////////////////
+      // arrowFunction(); Function expression cannot be called above the line it has been created.
+      //No hoisting
+      let arrowFunction = () => {
+        console.log("This function has been created with arrow function type");
+      }
+      arrowFunction();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global - Function Scopes</title>
+  </head>
+  <body>
+    <h2>Global - Function Scopes</h2>
+
+    <script>
+      let num = 5; //Global scope
+
+      function myFunction() {
+        let x = 20; //Local Scope
+        let y = 30; //Local Scope
+        let z = 40; //Local Scope
+        console.log(x, y, z);
+        console.log(num);
+
+        num = 7;
+      }
+
+      myFunction();
+
+      //console.log(x, y, z); // Cant be accessed outside the function
+
+
+      console.log(num); // 7;
+
+      let num2 = 15;
+
+      function myFunction2() {
+
+        let num2 = 25;
+        console.log(num2);
+      }
+      myFunction2(); // function only calls its own scope
+      console.log(num2); // 15 is global and is not changed by the function below.These 2 are different variables
+
+    </script>
+  </body>
+</html>
