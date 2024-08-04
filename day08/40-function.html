@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function</title>
+  </head>
+  <body>
+    <h2>Function</h2>
+    <input
+      type="text"
+      id=""
+      placeholder="Enter your date of birth in year"
+      onchange="calculateAge5(this.value)"
+    />
+    <p></p>
+
+    <script>
+      function calculateAge() {
+        console.log(`My age is: ${2024 - 1980}`);
+      }
+      calculateAge();
+
+      //////////////////////////////////////////
+      function calculateAge2(dateOfBirth) {
+        console.log(`My age is: ${2024 - dateOfBirth}`);
+      }
+      calculateAge2(1994);
+      calculateAge2(1980);
+
+      //////////////////////////////////////////
+      function calculateAge3(dateOfBirth) {
+        return 2024 - dateOfBirth;
+      }
+      let result = calculateAge3(2001);
+      console.log(`My age is: ${result}`);
+
+      ///////////////// Dynamic ////////////////
+      console.log(new Date().getFullYear()); //Sat Aug 03 2024 21:39:57 GMT+0300 (GMT+03:00)
+      function calculateAge4(dateOfBirth) {
+        let thisYear = new Date().getFullYear();
+        return `My age is: ${thisYear - 1980}`;
+      }
+      console.log(calculateAge4(1980));
+
+      ///////////////// More Dynamic ////////////////
+      function calculateAge5(birthDate) {
+        /*         let birthDate = document.querySelector("input").value; */
+        /*         let birthDate = event.target.value;  */
+        let currentYear = new Date().getFullYear();
+        document.write(`My age is: ${currentYear - birthDate}`);
+      }
+    </script>
+  </body>
+</html>
