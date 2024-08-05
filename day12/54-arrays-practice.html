@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays Practice</title>
+  </head>
+  <body>
+    <h2>Arrays Practice</h2>
+
+    <script>
+      //Write a function that finds the biggest and smallest number in array
+      var numbers = [12, 56, 14, 67, 89, 33, 22, "abc"];
+
+      const findBiggestNumber = (arr) => {
+        let numericArray = arr.filter((item) => typeof item === "number");
+
+        let largestNum = numbers[0];
+        let smallestNum = numbers[0];
+
+
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] > largestNum) {
+            largestNum = arr[i];
+          }
+
+          if (arr[i] < smallestNum) {
+            smallestNum = arr[i];
+          }
+        }
+        let sum = largestNum + smallestNum;
+        return [smallestNum, largestNum, sum];
+      };
+      console.log(findBiggestNumber(numbers)); // [89, 12, 223]
+      console.log(findBiggestNumber(numbers)[0]);
+      console.log(findBiggestNumber(numbers)[1]);
+      console.log(findBiggestNumber(numbers)[2]);
+    </script>
+  </body>
+</html>

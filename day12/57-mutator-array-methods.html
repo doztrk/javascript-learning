@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Mutator</title>
+  </head>
+  <body>
+    <h2>Array Mutator Methods</h2>
+
+    <script>
+      let numbers = [12, 56, 14, 67, 89, 33, 23];
+      var result;
+      console.log(numbers);
+
+      // 1 - push() - adds element to the end of the array, and returns the new length
+
+      numbers.push(65);
+      console.log(numbers); //[12,56,14,67,89,33,23,65]
+
+      result = numbers.push(75, 145);
+
+      console.log(numbers); //[12,56,14,67,89,33,23,65,75,145]
+      console.log(result); // 10;
+
+      // 2 - pop() - removes the last element from an array, and returns that element
+
+      numbers.pop();
+      console.log(numbers); //[12,56,14,67,89,33,23,65,75 - (145)]
+      result = numbers.pop();
+      console.log(numbers); //[12,56,14,67,89,33,23,65]
+      console.log(result); // 75
+
+      // 3 - shift() - removes the first element from an array, and returns that element
+
+      numbers.shift();
+      console.log(numbers); //[ (12)- 56,14,67,89,33,23,65]
+      result = numbers.shift();
+      console.log(numbers); //[ (56) - 14,67,89,33,23,65]
+      console.log(result); // 56
+
+      // 4 - unshift() - adds an element to the beginning of an array, and returns the new length
+      numbers.unshift(450);
+      console.log(numbers); //[450, 56, 14, 67, 89, 33, 23, 65]
+
+      result = numbers.unshift(185, 285);
+      console.log(numbers); //[185, 285, 450, 56, 14, 67, 89, 33, 23, 65]
+      console.log(result);
+
+      // 5 - sort() - sorts the elements of an array in natural order, returns the sorted array
+      numbers.sort();
+      console.log(numbers); //[14, 185, 23, 285, 33, 450, 65, 67, 89] (9)
+
+      // !! IMPORTANT !! We need to add a function to sort the array of numbers, because JS, by default, sorts strings in alphabetical order
+      numbers.sort((x, y) => x - y);
+      console.log(numbers); //[14, 23, 33, 56, 65, 67, 89, 185, 285, 450]
+
+      var colors = ["red", "green", "blue", "yellow"];
+      result = colors.sort(); // Sorts the array in alphabetical order
+      console.log(colors); // ["blue", "green", "red", "yellow"]
+
+      // 6 - reverse() - reverses the order of the elements of an array
+
+      numbers.reverse();
+      console.log(numbers); //[450, 285, 185, 89, 67, 65, 56, 33, 23, 14]
+
+      colors.reverse();
+      console.log(colors); // ["yellow", "red", "green", "blue"]
+
+      // 7 - splice() - removes elements from an array and, if needed, inserts new elements in their place
+
+      // a - remove elements after a certain index
+      result = numbers.splice(6);
+      console.log(numbers); //[450, 285, 100, 200, 300, 89, 67, 65, 56, 33, 23, 14]
+      console.log(result); // 3
+
+      //b - removes certain amount of elements after a certain index
+      numbers.splice(2, 1);
+      console.log(numbers); // [450, 285, 89, 67, 65]
+
+      // c - removes after certain index and adds new elements
+      numbers.splice(1,2,30,44); // removes 2 elements after index 1 and adds 2 new element
+      console.log(numbers); // [450, 30, 44, 67, 65]
+
+      numbers.splice(3,0,57) // removes 0 elements after index 3 and adds 1 new element
+      console.log(numbers); // [450, 30, 44, 57, 67, 65]
+    </script>
+  </body>
+</html>

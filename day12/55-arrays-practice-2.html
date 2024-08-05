@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays Practice 2</title>
+  </head>
+  <body>
+    <h2>Arrays Practice 2</h2>
+
+    <script>
+      //Write a function that increases the values of the numbers in the array by 20%
+
+      const prices = [123, 5666, 126, 67];
+      let prices2 = [100, 5000, 120, 60];
+
+      const increasePrices = (arr, rate) => {
+        if (!Array.isArray(arr) || arr.length == 0) {
+          return;
+        }
+
+        for (let i = 0; i < arr.length; i++) {
+          arr[i] += (arr[i] * rate) / 100;
+        }
+        return arr;
+      };
+
+      console.log(increasePrices(prices, 20));
+      console.log(increasePrices(prices2, 30));
+    </script>
+  </body>
+</html>
