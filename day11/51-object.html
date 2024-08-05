@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body>
+    <h2>Object</h2>
+
+    <script>
+      const car = {
+        name: "BMW",
+        model: "X5",
+        color: "black",
+        engine: {
+          type: "diesel",
+          power: 450 + "hp",
+          volume: 5.5 + "l",
+        },
+        start: function () {
+          console.log("Car started");
+        },
+      };
+      console.log(car); //{...}
+      console.log(typeof car); //Object
+      console.log(car.name); //BMW
+      console.log(typeof car.engine.power); //String
+      console.log(car.start()); //Car started
+      console.log(car["color"]); // Black
+
+      //We can change the properties of the object
+      car.engine.size = 7;
+      console.log(car.engine.size); // 7
+
+      car.oil = "Super";
+      console.log(car.oil); //Super
+
+      //car = 7; //Assignment to constant variable
+
+      console.log(Object.entries(car)); //[Log] [["name", "BMW"], ["model", "X5"], ["color", "black"], Array, Array, ["oil", "Super"]] (6) (51-object.html, line 41)
+      console.log(Object.keys(car)); //["name", "model", "color", "engine", "start", "oil"] (6)
+      console.log(Object.values(car)); //["BMW", "X5", "black", {...}, Array, "Super"] (7)
+    </script>
+  </body>
+</html>

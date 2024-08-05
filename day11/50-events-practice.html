@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Practice</title>
+    <style>
+      input,
+      button {
+        margin: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Event Practice</h2>
+
+    <input type="number" placeholder="Enter midterm score" id="midterm"/>
+    <input type="number" placeholder="Enter final score" id="final" />
+
+    <button id="btn">Calculate</button>
+    <div id="result"></div>
+
+    <script>
+      /* When the button is pressed, check the scores entered in the two textboxes,
+      calculate their average in a 100-point system,
+      and convert this average to a letter grade. */
+
+      btn.addEventListener("click", () => {
+        let midterm = document.getElementById("midterm").value;
+        let final = document.getElementById("final").value;
+
+        if (!isNoteValid(midterm) || !isNoteValid(midterm)) {
+          result.innerHTML = "Enter valid scores";
+          return;
+        }
+
+        let average = calculateAverage(midterm, final);
+        let letterGrade = convertGradeToLetter(average);
+
+        result.innerHTML = `Average: ${average} - Grade: ${letterGrade}`; //letterGrade;
+      });
+
+      const calculateAverage = (midterm, final) =>
+        (midterm * 0.4 + final * 0.6).toFixed(1);
+
+      const convertGradeToLetter = (average) => {
+        let letter;""
+        switch (true) {
+          case average >= 90:
+            letter = "A";
+            break;
+          case average >= 80:
+            letter = "B";
+            break;
+          case average >= 70:
+            letter = "C";
+            break;
+          case average >= 50:
+            letter = "D";
+            break;
+          default:
+            letter = "F";
+            break;
+        }
+        return letter;
+      };
+
+      // Function checking the validity of numbers
+
+      const isNoteValid = (point) => {
+        point = parseInt(point);
+        return point >= 0 && point <= 100;
+      };
+
+      /* console.log(convertGradeToLetter(30));
+      console.log(calculateAverage(30, 70)); */
+    </script>
+  </body>
+</html>

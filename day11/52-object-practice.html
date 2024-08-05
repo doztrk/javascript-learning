@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Practice</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
+      integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <h2 class="mt-3">Object Practice</h2>
+
+    <div class="container mt-3">
+      <select id="selectForm" class="form-select fs-4">
+        <option value="">Brand</option>
+      </select>
+    </div>
+
+    <h3 class="m-3 result"></h3>
+
+    <script>
+      let car = {
+        brand: "BMW",
+        year: 2023,
+        model: "M4",
+        color: "Black",
+        engine: 5.5,
+      };
+
+      const fillOptions = () => {
+        let carKeys = Object.keys(car);
+        let options = "";
+        for (let i = 0; i < carKeys.length; i++) {
+          console.log(car[carKeys[i]]);
+          options += `<option>${carKeys[i]}</option>`;
+        }
+        console.log(options);
+        selectForm.innerHTML = options;
+        selectForm.size = carKeys.length;
+      };
+
+      fillOptions();
+      selectForm.onchange = () => {
+        let carValue = event.target.value;
+        document.querySelector(".result").innerHTML = car[carValue];
+      };
+    </script>
+  </body>
+</html>
