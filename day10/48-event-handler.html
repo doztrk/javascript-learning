@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handler</title>
+    <style>
+      button {
+        padding: 5px 12px;
+        background-color: coral;
+        color: white;
+        font-size: 17px;
+        border-radius: 3px;
+        margin: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Event Handler</h2>
+
+    <button id="btn1" onclick="sayHello()">Hello1</button>
+    <button id="btn2">Hello2</button>
+    <button id="btn3">Hello3</button>
+    <button id="btn4">Hello4</button>
+    <button id="btn5">Hello5</button>
+    <button id="btn6">Hello6</button>
+
+    <script>
+      //1st way
+      function sayHello() {
+        alert("Hello Wolrd");
+      }
+
+      //2nd way
+      btn2.onclick = sayHello; //No paranthesis because, function will be called after the click
+
+      //3rd way
+      btn3.addEventListener("click", sayHello);
+
+      //Using with anonymous function
+      btn4.onclick = () => alert("Hello Wolrd");
+
+      //Arrow Function
+      btn5.addEventListener("click", () => alert("Hello Wolrd"));
+
+      // Some other events
+      btn6.addEventListener("copy", ()=> btn6.style.backgroundColor = "blue")
+
+    </script>
+  </body>
+</html>
