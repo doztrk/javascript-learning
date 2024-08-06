@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Of Practice</title>
+  </head>
+  <body>
+    <h2>For Of Practice</h2>
+
+    <script>
+      /* EXAMPLE: Write a program using FOR OF that combines the elements in an array 
+        into a single String.*/
+
+        let flowers = ["Rose","Tulip","Lilly","Daisy","Violet"];
+        
+        //1 - Mutator usage
+        console.log(flowers.join(" ")); // Rose Tulip Lilly Daisy Violet
+
+        console.log("-----------------")
+
+        //2 - Algorithmic way
+        const flowersJoin = (arr) =>{
+
+            let joined = "";
+
+            for(let element of arr){
+                joined += element + " ";
+            };
+            return joined;
+
+        }
+        console.log(flowersJoin(flowers));
+    </script>
+  </body>
+</html>

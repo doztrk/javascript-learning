@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For In Practice</title>
+  </head>
+  <body>
+    <h2>For In Practice</h2>
+
+    <script>
+      /* EXAMPLE: Write a program using FOR IN that combines
+       matching index elements from two separate arrays into a new array.*/
+
+      const firstNames = ["John", "Jack", "Bob", "Bill"];
+      const lastNames = ["Doe", "Duff", "Duck", "Dill"];
+      let fullNames = [];
+
+      const createFullNames = (names, surnames) => {
+        for (let i in names) {
+          fullNames.push(names[i] + " " + surnames[i]);
+        }
+        return fullNames;
+      };
+
+      let result = createFullNames(firstNames, lastNames);
+      console.log(result);
+    </script>
+  </body>
+</html>

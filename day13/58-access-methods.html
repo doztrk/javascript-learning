@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Methods</title>
+</head>
+<body>
+    <h2>Access Methods</h2>
+
+    <script>
+        let animals = ["Lion", "Tiger", "Elephant","Cat"];
+        let returns;
+
+
+        // 1 - concat() does not change the original array, it returns a new array that contains the added element.
+        result = animals.concat("Dog");
+        console.log(animals); // ["Lion", "Tiger", "Elephant","Cat"]
+        console.log(result); // ["Lion", "Tiger", "Elephant","Cat","Dog"]
+
+        let animals2 = ["Fox", "Lion","Rabbit"];
+        animals = animals.concat(animals2);
+        console.log(animals); // ["Lion", "Tiger", "Elephant","Cat","Fox","Lion","Rabbit"]
+
+        // 2 - includes() checks if the array contains a certain element, returns true or false
+        returns = animals.includes("Lion");
+        console.log(returns); // true
+        returns = animals.includes("Dog");
+        console.log(returns); // false
+
+        // 3 - indexOf() returns the index of the element, if not found returns -1
+        returns = animals.indexOf("Cat");
+        console.log(returns); // 3
+
+        // 4 - lastIndexOf() returns the last index of the element,if not found returns -1
+        returns = animals.lastIndexOf("Lion");
+        console.log(returns); // 3
+
+        // 5 - join() returns the array as a string, puts whatever you pass into the parameter between the elements
+        returns = animals.join("*");
+        console.log(returns); // Lion,Tiger,Elephant,Cat,Fox,Lion,Rabbit
+        console.log(typeof returns); // string
+
+        // 6 - toString() returns the array as a string, puts comma between each element
+        returns = animals.toString();
+        console.log(returns); // Lion,Tiger,Elephant,Cat,Fox,Lion,Rabbit
+        console.log(typeof returns); // string
+
+        // 7 - slice() takes the start index and an end index and returns a new array
+        returns = animals.slice(2,4);
+        console.log(returns); // ["Elephant","Cat"]
+    </script>
+    
+</body>
+</html>

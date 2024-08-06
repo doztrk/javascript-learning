@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For in - For of Loops</title>
+</head>
+<body>
+    <h2>For in - For of Loops</h2>
+
+    <script>
+        var fruits = ["apple","pear","cherry","banana","mango"];
+
+        var person = {
+            firstName: "Ayşe",
+            lastName:"Çelik",
+            age : 25
+        }
+
+        /////////////// For in loops//////////////////////
+        for (var i in fruits) { // i, takes index values
+            console.log(fruits[i]); // thats why fruits[i] is used // apple, pear, cherry, banana, mango
+        }
+
+        console.log("**************");
+
+        for (k in person){ // k, takes key names
+            console.log(k + ": " +person[k]) // firstName: Ayşe, lastName: Çelik, age: 25
+        }
+        console.log("**************");
+
+        
+        /////////////// For of loops//////////////////////
+
+        // For of loops
+        for(f of fruits){ // f, takes elements of the array
+            console.log(f);
+        }
+
+        for(k of person){ //k gives "not iterable" error in objects
+            console.log(k);
+        }
+
+
+    </script>
+    
+</body>
+</html>
