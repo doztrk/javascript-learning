@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter Practice</title>
+  </head>
+  <body>
+    <h2>Filter Practice</h2>
+
+    <script>
+      // 1- Using the filter method, write a program that takes the negative coordinates from an array of coordinates and stores them in a new array.
+
+      let coordinates = [-100, 150, -32, 43, -20];
+
+      let negativeCoordinates = coordinates.filter((item) => item < 0);
+
+      console.log(negativeCoordinates); // [-100, -32, -20]
+
+      // 2 - Write a program that selects individuals from an array whose names start with the "Specified" letter and stores them in a separate array.
+
+      let names = [
+        "Ayşe",
+        "Ali",
+        "Can",
+        "Canan",
+        "John",
+        "Conan",
+        "Messi",
+        "Ronaldo",
+      ];
+
+      // ------------- A -------------
+      let startsWithC = names.filter((item) => item.startsWith("C"));
+      console.log(startsWithC);
+
+      // ------------- B -------------
+      function filterPeople(array, letter) {
+        letter = letter.toUpperCase();
+        return array.filter((element) => element.startsWith(letter));
+      }
+      console.log(filterPeople(names, "J")); // 
+    </script>
+  </body>
+</html>

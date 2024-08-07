@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map Practice 2</title>
+  </head>
+  <body>
+    <h2>Map Practice 2</h2>
+
+    <script>
+      // Take the prices array of objects, if the price is or above 1000₺, make 10% increment, if the price is below 1000₺, make 15% increment.
+      //Hold the new prices in the new array.
+
+      products = [
+        { id: 1, name: "laptop", price: 3000 },
+        { id: 2, name: "mobile", price: 1000 },
+        { id: 3, name: "watch", price: 500 },
+        { id: 4, name: "tablet", price: 2000 },
+        { id: 5, name: "charger", price: 500 },
+      ];
+
+      let productWithNewPrices = products.map((product) => {
+        if (product.price >= 1000) {
+          product.price *= 1.1;
+        } else {
+          product.price *= 1.15;
+        }
+        return product;
+      });
+
+      console.log(newPrices);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For each - Map - Filter</title>
+  </head>
+  <body>
+    <h2>For each - Map - Filter</h2>
+
+    <script>
+      var numbers = [65, 7, 38, 26];
+
+      // For Of loop
+      // --------------------------------------------------------------------------
+      for (let number of numbers) {
+        console.log(number);
+      }
+
+      // For Each Method
+      // --------------------------------------------------------------------------
+      //First gives the element, second gives the index
+      numbers.forEach((numbers, i) => {
+        console.log(numbers + " " + i);
+      });
+
+      //Map Method - Creates a new array with the results of calling a function for every array element
+      // --------------------------------------------------------------------------
+      let newArray = numbers.map((numbers) => {
+        return numbers * 2;
+      });
+      console.log(newArray);
+
+      //Filter Method - Creates a new array with all elements that pass the test implemented by the provided function
+      // --------------------------------------------------------------------------
+      let result = numbers.filter((numbers) => {
+        return numbers > 25;
+      });
+      console.log(result);
+    </script>
+  </body>
+</html>

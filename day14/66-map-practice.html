@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map Practice</title>
+  </head>
+  <body>
+    <h2>Map Practice</h2>
+
+    <script>
+      //Change all the names into Uppercase
+
+      let cities = ["istanbul", "ankara", "izmir", "bursa"];
+      let upperCaseCities = cities.map((city) => city.toUpperCase());
+      console.log(upperCaseCities);
+
+      //Turn the TL prices into dollar and euro prices
+
+      const tlPrices = [1000, 1500, 1000, 500, 800];
+      const euro = 36.5;
+      const dolar = 33.2;
+
+      let dollarPrice = tlPrices.map((price) => (price / dolar).toFixed(2));
+
+      console.log(dollarPrice);
+
+      let euroPrice = tlPrices.map((price) => (price / euro).toFixed(2));
+
+      console.log(euroPrice);
+    </script>
+  </body>
+</html>

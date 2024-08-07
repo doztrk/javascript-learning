@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Each Practice</title>
+  </head>
+  <body>
+    <h2>For Each Practice</h2>
+
+    <script>
+      //Write a function that multiples the values of the numbers in the array by 5 with For-Each
+      const num = [-5, 24, -13, 7];
+      let newNumbers = [];
+
+      num.forEach((num) => {
+        return newNumbers.push(num * 5);
+      });
+      console.log(newNumbers);
+
+      ///////////---With Map---//////////
+      
+      /* let newNumbers2 = num.map((num) => {
+        return num * 5;
+      }); */
+
+      let newNumbers2 = num.map((num) => num*2);
+      console.log(newNumbers2);
+    </script>
+  </body>
+</html>
