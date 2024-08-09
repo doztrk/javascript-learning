@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reduce</title>
+  </head>
+  <body>
+    <h2>Reduce</h2>
+
+    <script>
+      let coordinates = [-100, 150, -32, 43, -20];
+      //Addition with for-each
+
+      let sum = 0;
+      coordinates.forEach((num) => (sum += num)); // 41
+
+      //Addition with reduce
+
+      let totalCoordinates = coordinates.reduce((sum, num) => sum + num, 0);
+      console.log(totalCoordinates); // 41
+      console.log(totalCoordinates / coordinates.length); //8.2
+
+      //////////////////////////////////////
+
+      //Calculate the multiplication of all the numbers
+      let numbers = [3, 7, 15, 25];
+
+      let reduceNumbers = numbers.reduce(
+        (multiplication, num) => multiplication * num,
+        1
+      );
+
+      /////////////////////////////////////
+
+      /*If the first value is given, it is used as the initial value,
+        otherwise the initial value is taken from the array, 1.2.*/
+
+      let decimals = [1.2, 7.3, 4.8, 5.7];
+      let total = decimals.reduce((sum, num) => sum + Math.round(num), 0);
+      console.log(total); // 19
+
+      let total2 = decimals.reduce((sum, num) => sum + Math.round(num));
+      console.log(total2); // 19.2
+      
+
+
+    </script>
+  </body>
+</html>

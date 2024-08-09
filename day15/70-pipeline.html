@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pipeline</title>
+  </head>
+  <body>
+    <h2>Pipeline</h2>
+
+    <script>
+      /* 1 - Write a program that filters out the negative coordinates from an array of coordinates,
+        converts them to positive, and prints them one by one on the console.*/
+
+      let coordinates = [-100, 150, -32, 43, -20];
+      coordinates
+        .filter((element) => element < 0)
+        .map((element) => element * -1)
+        .forEach((element) => console.log(element)); //for.Each() returns undefined
+    </script>
+  </body>
+</html>

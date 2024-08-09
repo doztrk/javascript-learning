@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reduce Practice</title>
+  </head>
+  <body>
+    <h2>Reduce Practice</h2>
+
+    <script>
+      /*     
+      A company wants to give a 10% raise to salaries that are less than 15000 TL 
+      and wants to know the total amount of TL to be paid to these people who receive the raise.
+       Write the relevant algorithm.
+       */
+
+      let salaries = [13000, 12891, 13500, 24200, 27000, 12500];
+
+      let increasedSalary = salaries
+        .filter((salary) => salary < 15000) // ---> Filters the salaries lesser than 15000
+        .map((salary) => Math.round((salary *= 1.1))) // Increases the prices
+        .reduce((total, salary) => total + salary, 0); //Shows the total amount to be given.
+
+      console.log(increasedSalary); // 57.080
+
+      
+    </script>
+  </body>
+</html>

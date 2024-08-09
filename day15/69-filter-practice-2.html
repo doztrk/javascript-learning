@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter Practice</title>
+  </head>
+  <body>
+    <h2>Filter Practice</h2>
+
+    <script>
+      // 1. Create an array of products for price lesser than 1000₺
+      products = [
+        { id: 1, name: "laptop", price: 3000 },
+        { id: 2, name: "mobile", price: 1000 },
+        { id: 3, name: "watch", price: 500 },
+        { id: 4, name: "tablet", price: 2000 },
+        { id: 5, name: "charger", price: 500 },
+        { id: 6, name: "keyboard", price: 200 },
+      ];
+
+      let pricesUnder1000 = products.filter((product) => product.price < 1000);
+      let pricesOver1000 = products.filter((product) => product.price > 1000);
+
+      console.log(pricesUnder1000);
+      console.log(pricesOver1000);
+    </script>
+  </body>
+</html>
