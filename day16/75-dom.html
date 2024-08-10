@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+  </head>
+  <body>
+    <h2>Document Object Model</h2>
+
+    <p id="first">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia placeat
+      libero repellat tempore veritatis dolores qui aliquam, nihil molestias
+      ducimus similique explicabo hic quas fugit esse excepturi, ex a nesciunt.
+    </p>
+
+    <p id="second">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia placeat
+      libero repellat tempore veritatis dolores qui aliquam, nihil molestias
+      ducimus similique explicabo hic quas fugit esse excepturi, ex a nesciunt.
+    </p>
+
+    <p class="last">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia placeat
+      libero repellat tempore veritatis dolores qui aliquam, nihil molestias
+      ducimus similique explicabo hic quas fugit esse excepturi, ex a nesciunt.
+    </p>
+
+    <script>
+        let firstP = document.getElementById("first");
+        console.log(firstP);
+
+        let allP = document.getElementsByTagName("p"); // Returns Array
+        console.log(allP);
+
+        console.log(allP[0]);
+
+        let lastP = document.getElementsByClassName("last"); // Returns Array
+        console.log(lastP);
+
+        
+    </script>
+  </body>
+</html>

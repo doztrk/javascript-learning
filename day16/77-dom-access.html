@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Access</title>
+  </head>
+  <body>
+    <h2>Document Object Model Access</h2>
+
+    <section>
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+          minima modi impedit natus. Aliquid quae, distinctio aspernatur
+          tempore, tempora quis tenetur nobis doloremque libero vitae modi,
+          saepe quidem dolore ex!
+        </p>
+
+        <ul id="list">
+          <li><a href="">Home</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="">Contact</a></li>
+          <li><a href="">Blog</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <script>
+      let list = document.getElementById("list");
+
+      //closest
+      console.log(list.closest("div")); // Takes the closest element by hierarchy
+
+      // children
+      //----------------------------------------------
+      console.log(list); // Array(4) [li, li, li, li]
+      console.log(list.children[1]); // About
+      console.log(list.firstElementChild); // Home
+      console.log(list.lastElementChild); // Blog
+
+      // parent
+      //----------------------------------------------
+      console.log(list.parentElement.parentElement); // Takes <div> first then <section>
+
+      // siblings
+      //----------------------------------------------
+      console.log(list.previousElementSibling); // <p>
+      console.log(list.nextElementSibling); // <ul>
+    </script>
+  </body>
+</html>
