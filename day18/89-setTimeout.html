@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setTimeout</title>
+  </head>
+  <body>
+    <h2>Set Timeout</h2>
+    <script>
+      /* Works asynchronous */
+      const sayHello = () => {
+        console.log("Hello");
+      };
+
+      setTimeout(sayHello, 3000); // Runs first
+
+      sayHello(); // Runs second
+
+      ///// We can declare the function inside the setTimeOut() function
+
+      let time = setTimeout(() => {
+        console.log("Hello World");
+      }, 4000);
+      
+      clearTimeout(time); // Clears the timeout
+    </script>
+  </body>
+</html>
