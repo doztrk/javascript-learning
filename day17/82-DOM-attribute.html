@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Attribute</title>
+  </head>
+  <body>
+    <h2>DOM Attribute</h2>
+
+    <input type="text" id="identity" />
+    <button disabled id="submit">Submit</button>
+    <p id="message"></p>
+
+    <script>
+      //Write a script that will make the button enabled when the indentityNo is 11 digits long
+      document.getElementById("identity").oninput = () => {
+        let indentityNo = event.target.value;
+        console.log(indentityNo);
+
+        // 1st Way (Optimal)
+        if (indentityNo.length == 11) {
+          document.getElementById("submit").disabled = false;
+          message.innerText = "";
+        } else {
+          document.getElementById("submit").disabled = true;
+          message.innerText = "Please enter 11 digits";
+        }
+
+        // 2nd Way (Uses DOM Remove,computationally more expensive)
+        /* if (indentityNo.length > 11) {
+          document.getElementById("submit").removeAttribute("disabled");
+        } else {
+            document.getElementById("submit").disabled = true;
+        } */
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error Handling</title>
+  </head>
+  <body>
+    <h2>Error Handling</h2>
+
+    <script>
+      const x = 5;
+
+      try {
+        x = 7;
+      } catch (err) {
+        console.log(err);
+      }
+
+      console.log("Kod akışı devam ediyor");
+
+      // Custom Error
+
+      const division = (a, b) => {
+        try {
+          if (b == 0) {
+            throw new Error("Cannot divide by zero");
+          }
+          return a / b;
+        } catch (err) {
+          alert(err.message);
+        }
+        finally{
+            console.log("Finally block");
+        }
+      };
+
+      console.log(division(4, 0));
+    </script>
+  </body>
+</html>

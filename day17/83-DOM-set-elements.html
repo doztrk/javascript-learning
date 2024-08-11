@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Set Elements</title>
+  </head>
+  <body>
+    <h2>DOM Set Elements</h2>
+
+    <input type="text" id="name" />
+    <button id="btn">Add</button>
+
+    <ul id="list"></ul>
+
+    <script>
+      //Name added to the input field is to be added to list
+
+      btn.onclick = () => {
+        let name = document.getElementById("name");
+        let list = document.getElementById("list");
+
+        let newLi = document.createElement("li");
+
+        newLi.innerHTML = name.value;
+        newLi.style.color = "red";
+        console.log(newLi);
+
+        list.appendChild(newLi);
+        //list.prepend(newLi); //Adds element to the start of the list
+        //list.append(newLi,"Student");
+        console.log(list);
+
+        name.value = "";
+        name.focus();
+      };
+    </script>
+  </body>
+</html>
