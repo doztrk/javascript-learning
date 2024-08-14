@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storage API Practice</title>
+  </head>
+  <body>
+    <h2>Storage API Practice</h2>
+
+    <h4 id="welcome"></h4>
+
+    <script>
+      let counterValue = Number(localStorage.getItem("counter"));
+      
+      if (isNaN(counterValue)) counterValue = 0;
+      counterValue++;
+
+      localStorage.setItem("counter", counterValue);
+
+      welcome.innerHTML = `You have entered ${counterValue} times`;
+    </script>
+  </body>
+</html>

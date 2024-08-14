@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rest Practice</title>
+  </head>
+  <body>
+    <h2>Rest Practice</h2>
+
+    <script>
+      /*
+     Write a function that takes a student's first and last name along with an unspecified number of grades as parameters,
+     calculates the average of the grades, and returns the average along with the student's name.
+*/
+
+      const getAverage = (firstname, lastname, ...notes) => {
+        let sum = notes.reduce((sum, note) => sum + note, 0);
+        let average = sum / notes.length;
+
+        return `${firstname} ${lastname} ortalama notu  : ${average}`;
+      };
+
+      console.log(
+        getAverage("Ayse", "Yilmaz", 100, 90, 80, 70, 60, 50, 40, 30, 20, 10) // Ayse Yilmaz ortalama notu  : 55
+      );
+
+      const multiplication = (a, b=1) => {
+        return a * b;
+      };
+      console.log(multiplication(5, 5)); // 25
+      console.log(multiplication(5)); // 5 -- default value of b is 1
+
+      
+
+    </script>
+  </body>
+</html>

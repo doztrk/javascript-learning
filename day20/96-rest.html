@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rest Operator</title>
+  </head>
+  <body>
+    <h2>Rest Operator</h2>
+
+    <script>
+      // Create a function that performs addition. However, this function should accept a different number of number parameters.
+
+      const total = (a,b) => {
+        return a + b;
+      };
+
+      console.log(total(2,3)); // 5 
+      console.log(total(2,3,5)); // 5
+
+      const total2 = (...numbers) => {
+          let total = numbers.reduce((sum, num) => sum + num, 0);
+          return total;
+      }
+      console.log(total2(2,3,5)); // 10
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spread Operator</title>
+  </head>
+  <body>
+    <h2>Spread Operator</h2>
+
+    <script>
+      // Example: Write code that sends the numbers in an array as separate parameters to the sum function.
+
+      const sum = (n1, n2, n3, n4) => {
+        return n1 + n2 + n3 + n4;
+      };
+
+      let numbers = [65, 25, 75, 35];
+
+      console.log(sum(numbers[0], numbers[1], numbers[2], numbers[3])); // 200
+
+      console.log(sum(...numbers)); //200
+
+      console.log(...numbers); // 65, 25, 75, 35
+
+      console.log(numbers);
+
+      // Sets
+
+      let name = ["John", "Doe", "Smith", "Doe", "Dogu"];
+
+      let nameSet = new Set(name);
+
+      console.log(nameSet); // Set(3) { "John", "Doe", "Smith" }
+
+      let uniqueNames = [...nameSet];
+      console.log(uniqueNames); // ["John", "Doe", "Smith"]
+
+      // Spread is used in Array concatenation and object merging
+      let cities = ["istanbul", "ankara", "izmir", "bursa"];
+      console.log(cities);
+
+      cities = ["Baku", "Bishkek", ...cities];
+      console.log(cities);
+      
+    </script>
+  </body>
+</html>
