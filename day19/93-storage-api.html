@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storage API</title>
+  </head>
+  <body>
+    <h2>Storage API</h2>
+
+    <button id="btnClick">SetItem</button>
+
+    <script>
+      btnClick.onclick = () => {
+        // LOCAL STORAGE
+        localStorage.setItem("messageLocal", "Hello local storage");
+
+        console.log(localStorage.getItem("messageLocal")); // Hello local storage
+
+        // localStorage.removeItem("message");
+
+        console.log(localStorage.getItem("messageLocal")); // null
+
+        // localStorage.clear(); // Hepsini siler
+
+        // SESSION STORAGE
+        sessionStorage.setItem("messageSession", "Hello session storage");
+
+        console.log(sessionStorage.getItem("messageSession")); // Hello local storage
+
+        // sessionStorage.removeItem("message");
+
+        console.log(sessionStorage.getItem("messageSession"));
+      };
+    </script>
+  </body>
+</html>

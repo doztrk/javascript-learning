@@ -23,6 +23,7 @@ const setList = (countryList) => {
 };
 
 //setList(filterCountries("Tur"));
+//Debouncing
 let timer;
 document.getElementById("searchBar").addEventListener("input", (event) => {
   if (timer) clearTimeout(timer);

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+    <style>
+        *{
+            margin: 10px;
+        }
+        button{
+            padding: 5px 15px;
+            background-color: greenyellow;
+            border-radius: 3px;
+
+        }
+        h3{
+            color: blue;
+        }
+        .effect{
+            display:none
+        }
+    </style>
+</head>
+<body>
+    <h2>setInterval</h2>
+    
+    <button id="btnStart">Start</button>
+    <button id="btnStop">Stop</button>
+
+    <h3 id="message">Merhaba Dünya!</h3>
+
+    <script>
+        //We create x variable so that it will not let multiple setInterval function run at the same time
+        let x;
+        btnStart.onclick = () =>{
+            if(x) return; // --> If x is not 0, it will not run the function
+             x = setInterval(()=> message.classList.toggle("effect"), 1000);
+             
+        }
+        btnStop.onclick = () => {
+            clearInterval(x);
+            x = 0; // --> Return x to 0 so that the start button can assign a new value and can start the function
+        }
+
+    </script>
+</body>
+</html>
