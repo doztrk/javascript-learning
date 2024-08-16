@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback Chains</title>
+  </head>
+  <body>
+    <h2>Callback Chains</h2>
+
+    <script>
+      const order = (myCallback) => {
+        console.log("Order is given");
+        setTimeout(() => {
+          console.log("Order is ready");
+          myCallback();
+        }, 2000);
+      };
+
+      const eat = (myCallback) => {
+        console.log("Started eating");
+        setTimeout(() => {
+          console.log("Finished eating");
+          myCallback();
+        }, 1500);
+      };
+
+      const watchMovie = (myCallback) => {
+        console.log("Started watching movie");
+        setTimeout(() => {
+          console.log("Finished watching movie");
+          myCallback();
+        }, 1500);
+      };
+
+      const eatPopcorn = () => {
+        console.log("Eating popcorn");
+        setTimeout(() => {
+          console.log("Finished eating popcorn");
+        }, 1000);
+      };
+
+      //It is asynchronous, thus leading to a output disorder
+      /*       order();
+      eat();
+      watchMovie();
+      eatPopcorn();
+ */
+
+      // We use callback chain to put callback functions in an order
+      order(() => {
+        eat(() => {
+          watchMovie();
+          eatPopcorn();
+        });
+      });
+    </script>
+  </body>
+</html>

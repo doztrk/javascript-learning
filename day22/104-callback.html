@@ -3,30 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sync - Async 2</title>
+    <title>Callback</title>
   </head>
   <body>
-    <h2>Sync - Async 2</h2>
+    <h2>Callback</h2>
+
+    <h3 id="h3result">Loading...</h3>
+    <h4 id="h4result">Loading...</h4>
 
     <script>
       const sum = (a, b) => {
         return a + b;
       };
 
-      const getCoordinates = (a, b) => {
+      const getCoordinates = (a, b, myCallback) => {
         //Coordinates are coming from an external API
         setTimeout(() => {
-          return a + b;
+          myCallback(a + b);
         }, 1000);
       };
 
-      console.log(sum(10, 20)); // 30
-      console.log(getCoordinates(20, 20)); // undefined
+      getCoordinates(15, 25, (data) => {
+        h3result.innerHTML = data;
+      });
+
+      getCoordinates(20, 50, (data) => {
+        h4result.innerHTML = data;
+      });
 
       /* getCoordinates is a synchronous function. 
       Since setTimeout is asynchronous and does not block the execution of the function,
        getCoordinates returns undefined immediately. The value within setTimeout is not returned because 
        it is executed after getCoordinates has already returned. */
+
+       //We use callback function in order to return the value from an async function
 
     </script>
   </body>
