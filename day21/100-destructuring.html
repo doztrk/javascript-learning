@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring</title>
+  </head>
+  <body>
+    <h2>Destructuring</h2>
+
+    <script>
+      let person = {
+        firstName: "Ayşe",
+        lastName: "Çelik",
+        city: "Ankara",
+        department: "IT",
+      };
+
+      let name = person.firstname;
+      let surName = person.lastname;
+      let personCity = person.city;
+      let personDepartment = person.department;
+
+      console.log(
+        `${name} ${surName} lives in ${personCity} and works in ${personDepartment}.`
+      );
+
+      let { firstName, lastName, city, department } = person;
+
+      console.log(
+        `${firstName} ${lastName} lives in ${city} and works in ${department}.`
+      );
+
+      //////////////////////////////
+
+      const student = {
+        id: 1,
+        phone: 555,
+        name: "John",
+        score: 50,
+      };
+
+      function printNameScore({ name, score }) {
+      console.log(name, score);
+      }
+      printNameScore(student);
+    </script>
+  </body>
+</html>

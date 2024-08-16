@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spread-2</title>
+  </head>
+  <body>
+    <h2>Spread</h2>
+
+    <script>
+      let person1 = {
+        firstName: "Ayşe",
+        lastName: "Çelik",
+        city: "Ankara",
+        departman: "IT",
+      };
+
+      let person2 = person1;
+
+      person2.firstName = "Ali";
+      //Reference value, it changes the original person1 name as well.
+      console.log(person1.firstName); // Ali
+
+      /* let person3 = {};
+      person3.firstName = "Can"; */
+
+      let person3 = { ...person1 }; // Shallow Copy
+      person3.firstName = "Can";
+
+      console.log(person1.firstName); // Ali
+      console.log(person3); // {firstName: "Can", lastName: "Çelik", city: "Ankara", departman: "IT"}
+
+      let person4 = { ...person3, city: "Istanbul", age: 359 };
+
+      console.log(person4); // {firstName: "Can", lastName: "Çelik", city: "Istanbul", departman: "IT", age: 359}
+    </script>
+  </body>
+</html>

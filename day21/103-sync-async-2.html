@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sync - Async 2</title>
+  </head>
+  <body>
+    <h2>Sync - Async 2</h2>
+
+    <script>
+      const sum = (a, b) => {
+        return a + b;
+      };
+
+      const getCoordinates = (a, b) => {
+        //Coordinates are coming from an external API
+        setTimeout(() => {
+          return a + b;
+        }, 1000);
+      };
+
+      console.log(sum(10, 20)); // 30
+      console.log(getCoordinates(20, 20));
+
+      /* getCoordinates is a synchronous function. 
+      Since setTimeout is asynchronous and does not block the execution of the function,
+       getCoordinates returns undefined immediately. The value within setTimeout is not returned because 
+       it is executed after getCoordinates has already returned. */
+
+    </script>
+  </body>
+</html>
