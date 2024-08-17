@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <h2>Promise - 2</h2>
+
+    <button id="btn">Click</button>
+
+    <script>
+      // Make confirm method in JS async
+
+      const confirmAsync = () => {
+        setTimeout(() => {
+          confirm("Are you sure?");
+        }, 1000);
+        console.log("Merhaba");
+      };
+
+      /*       btn.onclick = () => {
+        confirmAsync();
+      }; */
+      //This doesnt make it async.Merhaba is written after clicking button, then confirm comes
+
+      //Async version
+      const confirmAsync2 = (msg) => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            let result = confirm(msg);
+            resolve(result);
+          }, 0);
+        });
+      };
+
+      btn.onclick = () => {
+        confirmAsync2("Are you sure?").then((data) => {
+          if (data) {
+            console.log("Confirmed");
+          } else {
+            console.log("Cancelled");
+          }
+        });
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise Chains</title>
+  </head>
+  <body>
+    <h2>Promise Chains</h2>
+
+    <script>
+      const order = () => {
+        return new Promise((resolve) => {
+          console.log("Sipariş verildi.");
+          setTimeout(() => {
+            console.log("Sipariş hazır.");
+            resolve();
+          }, 3000);
+        });
+      };
+
+      const eat = () => {
+        return new Promise((resolve) => {
+          console.log("Started eating");
+          setTimeout(() => {
+            console.log("Finished eating");
+            resolve();
+          }, 1500);
+        });
+      };
+
+      const watchMovie = () => {
+        return new Promise((resolve) => {
+          console.log("Started watching movie");
+          setTimeout(() => {
+            console.log("Finished watching movie");
+            resolve();
+          }, 1500);
+        });
+      };
+
+      const eatPopcorn = () => {
+        return new Promise((resolve) => {
+          console.log("Started eating popcorn");
+          setTimeout(() => {
+            console.log("Finished eating popcorn");
+            resolve();
+          }, 1000);
+        });
+      };
+
+      /*       order();
+      eat();
+      watchMovie();
+      eatPopcorn(); 
+*/
+      // We use promise chain to put promise functions in an order
+
+      order().then(() => {
+        eat().then(() => {
+          watchMovie();
+          eatPopcorn();
+        });
+      });
+    </script>
+  </body>
+</html>

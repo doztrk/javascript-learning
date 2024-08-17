@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async - Await</title>
+  </head>
+  <body>
+    <h2>Async - Await</h2>
+
+    <script>
+      const promise1 = () => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            document.querySelector("body").style.backgroundColor = "red";
+            resolve("1st Promise");
+          }, 1500);
+        });
+      };
+      const promise2 = () => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            document.querySelector("body").style.backgroundColor = "yellow";
+            resolve("2nd Promise");
+          }, 2000);
+        });
+      };
+      const promise3 = () => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            document.querySelector("body").style.backgroundColor = "green";
+            resolve("3rd Promise");
+          }, 700);
+        });
+      };
+      const promise4 = () => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            document.querySelector("body").style.backgroundColor = "orange";
+            resolve("4th Promise");
+          }, 1000);
+        });
+      };
+
+      /*       //Asynchronous execution, they will be executed according to thier timer without one another
+      promise1().then((data) => console.log(data));
+      promise2().then((data) => console.log(data));
+      promise3().then((data) => console.log(data));
+      promise4().then((data) => console.log(data));
+
+      //Promise chain
+      promise1()
+        .then((data) => {
+          console.log(data);
+          return promise2();
+        })
+        .then((data) => {
+          console.log(data);
+          return promise3();
+        })
+        .then((data) => {
+          console.log(data);
+          return promise4();
+        }); */
+
+      ///////////////// Async Await - Turning asnyc into synchronous ////////////////
+      const asyncFunc = async () => {
+        console.log(await promise1());  
+        console.log(await promise2());
+        console.log(await promise3());
+        console.log(await promise4());
+      };
+
+      setInterval(asyncFunc, 7000);
+    </script>
+  </body>
+</html>
